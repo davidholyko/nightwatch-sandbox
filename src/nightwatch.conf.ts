@@ -1,77 +1,89 @@
-import { NightwatchProgrammaticAPIClient } from 'nightwatch';
-import * as path from 'path';
-import paths from './paths';
+//
+// Refer to the online docs for more details:
+// https://nightwatchjs.org/guide/configuration/nightwatch-configuration-file.html
+//
+//  _   _  _         _      _                     _          _
+// | \ | |(_)       | |    | |                   | |        | |
+// |  \| | _   __ _ | |__  | |_ __      __  __ _ | |_   ___ | |__
+// | . ` || | / _` || '_ \ | __|\ \ /\ / / / _` || __| / __|| '_ \
+// | |\  || || (_| || | | || |_  \ V  V / | (_| || |_ | (__ | | | |
+// \_| \_/|_| \__, ||_| |_| \__|  \_/\_/   \__,_| \__| \___||_| |_|
+//             __/ |
+//            |___/
+//
 
-const settings: NightwatchProgrammaticAPIClient['settings'] = {
-  src_folders: [paths.tests],
-  output_folder: paths.reports,
-  page_objects_path: paths.pages,
-  custom_commands_path: [paths.commands],
-  custom_assertions_path: [paths.assertions],
-  disable_typescript: false,
+module.exports = {
+  // An array of folders (excluding subfolders) where your tests are located;
+  // if this is not specified, the test source must be passed as the second argument to the test runner.
+  src_folders: [],
+
+  // See https://nightwatchjs.org/guide/concepts/page-object-model.html
+  page_objects_path: ['node_modules/nightwatch/examples/pages/'],
+
+  // See https://nightwatchjs.org/guide/extending-nightwatch/adding-custom-commands.html
+  custom_commands_path: ['dist/commands'],
+
+  // See https://nightwatchjs.org/guide/extending-nightwatch/adding-custom-assertions.html
+  custom_assertions_path: '',
+
+  // See https://nightwatchjs.org/guide/extending-nightwatch/adding-plugins.html
   plugins: [],
-  // globals_path: paths.globals,
-  selenium: {
-    check_process_delay: 500,
-    max_status_poll_tries: 15,
-    status_poll_interval: 200,
-    server_path: path.join(paths.bin, 'selenium.jar'),
-    start_process: true,
-    start_session: true,
-    log_path: false,
-    host: '127.0.0.1',
-    port: 4444,
-    cli_args: {
-      'webdriver.chrome.driver': path.join(paths.bin, 'chromedriver'),
-    },
-  },
-  test_settings: {
-    default: {
-      launch_url: 'http://localhost',
-      selenium_host: '127.0.0.1',
-      selenium_port: 4444,
-      silent: true,
-      output: true,
-      disable_colors: false,
-      screenshots: {
-        filename_format: () => 'png',
-        enabled: true,
-        path: paths.screenshots,
-        on_failure: true,
-        on_error: true,
-      },
-      desiredCapabilities: {
-        browserName: 'chrome',
-        chromeOptions: {
-          args: ['window-size=1920,1280', '--disable-gpu' /*, 'headless'*/],
-        },
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-      },
-      globals: {},
-      use_xpath: true,
-      end_session_on_fail: false,
-      skip_testcases_on_fail: false,
-    },
-    chrome: {
-      screenshots: {
-        filename_format: () => 'png',
-        enabled: true,
-        path: paths.screenshots,
-        on_failure: true,
-        on_error: true,
-      },
-      desiredCapabilities: {
-        browserName: 'chrome',
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-      },
-    },
-  },
+
+  // See https://nightwatchjs.org/guide/concepts/test-globals.html#external-test-globals
+  globals_path: '',
+
+  webdriver: {},
+
   test_workers: {
     enabled: true,
     workers: 'auto',
   },
-};
 
-export = settings;
+  test_settings: {
+    default: {
+      disable_error_log: false,
+      launch_url: 'https://nightwatchjs.org',
+
+      screenshots: {
+        enabled: false,
+        path: 'screens',
+        on_failure: true,
+      },
+
+      desiredCapabilities: {
+        browserName: 'chrome',
+      },
+
+      webdriver: {
+        start_process: true,
+        server_path: '',
+      },
+    },
+
+    chrome: {
+      desiredCapabilities: {
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+          // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
+          //
+          // w3c:false tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
+          w3c: true,
+          args: [
+            //'--no-sandbox',
+            //'--ignore-certificate-errors',
+            //'--allow-insecure-localhost',
+            //'--headless'
+          ],
+        },
+      },
+
+      webdriver: {
+        start_process: true,
+        server_path: '',
+        cli_args: [
+          // --verbose
+        ],
+      },
+    },
+  },
+};

@@ -6,7 +6,7 @@ module.exports = class FindAndLog {
 
     try {
       returnValue = await this.api.findElement(selector);
-      console.log(`FindAndLog found: ${returnValue.getId()}`);
+      console.log(`✔ FindAndLog found: ${returnValue.getId()}`);
     } catch (err) {
       const error = err as Error;
       console.error('An error occurred', error);

@@ -1,5 +1,10 @@
 # Nightwatch Sandbox
 
+## Prerequisites
+
+1. [Node](https://nodejs.org/en/)
+2. [Selenium Server](https://www.selenium.dev/downloads/)
+
 ## Setup
 
 ```shell
@@ -10,5 +15,16 @@ npm i
 ## Run Tests
 
 ```
-npm run test
+npm run start
 ```
+
+## Debugging
+
+```
+npm run prestart
+npx nightwatch dist/tests --config dist/nightwatch.conf.js
+```
+
+### Resources
+
+1. https://github.com/kallaspriit/typescript-nightwatch-example
