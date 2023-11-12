@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+    /* Language and Environment */
+    "target": "es2016",
+    /* Modules */
+    "module": "commonjs",
+    // "preserveSymlinks": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    /* Type Checking */
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["./src/types.nightwatch.d.ts"],
+  "exclude": []
+}
