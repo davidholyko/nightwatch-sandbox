@@ -5,16 +5,18 @@
   "main": "index.js",
   "scripts": {
     "cleanup": "rm -rf dist",
-    "build": "tsc && echo { \"type\": \"commonjs\" } > dist/package.json",
+    "build": "tsc && cp src/module.json dist/package.json",
     "prestart": "npm run cleanup && npm run build",
     "start": "npx nightwatch dist/tests --config dist/nightwatch.conf.js",
-    "poststart": "rm nightwatch.conf.cjs"
+    "poststart": "rm -f nightwatch.conf.cjs"
   },
   "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/nightwatch": "^2.3.28",
     "nightwatch": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/nightwatch": "^2.3.28"
   }
 }
