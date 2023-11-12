@@ -1,6 +1,10 @@
 import 'nightwatch';
+import { DescribeInstance } from 'nightwatch';
 
-describe('Baseline Test', () => {
+describe('Find and Log Test', function (this: DescribeInstance) {
+  this.disabled = false;
+  this.tags = [];
+
   before(browser => {
     browser.navigateTo('https://www.ecosia.org/');
   });

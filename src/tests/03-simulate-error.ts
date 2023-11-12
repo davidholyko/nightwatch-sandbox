@@ -1,8 +1,8 @@
 import 'nightwatch';
 import { DescribeInstance } from 'nightwatch';
 
-describe('Baseline Test', function (this: DescribeInstance) {
-  this.disabled = false;
+describe('Simulate Error Test', function (this: DescribeInstance) {
+  this.disabled = true;
   this.tags = [];
 
   before(browser => {
@@ -11,11 +11,8 @@ describe('Baseline Test', function (this: DescribeInstance) {
 
   it('Demo test ecosia.org', async function (browser) {
     await browser.waitForElementVisible('body');
+    await browser.simulateError();
     await browser.assert.titleContains('Ecosia');
-    await browser.assert.visible('input[type=search]');
-    await browser.setValue('input[type=search]', 'nightwatch');
-    await browser.assert.visible('button[type=submit]');
-    await browser.click('button[type=submit]');
   });
 
   after(browser => {
