@@ -1,5 +1,7 @@
 # Nightwatch Sandbox
 
+![npm-run-start](./docs/images/npm-run-start.png)
+
 ## Prerequisites
 
 1. [Node](https://nodejs.org/en/)
