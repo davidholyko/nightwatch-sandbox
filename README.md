@@ -24,7 +24,17 @@ npm run start
 
 To develop tests locally, follow these steps:
 
-1. Add the tag `dev` to a test you are working on
+1. Serve the `index.html` page to run off of. This page exists so that a developer could have some simple HTML to run automation on.
+
+```shell
+# serve the html
+npm run serve:html
+
+# open in chrome
+open -a "Google Chrome" "http://localhost:7310/"
+```
+
+2. Add the tag `dev` to a test you are working on
 
 ```ts
 import 'nightwatch';
@@ -40,7 +50,7 @@ describe('Baseline Test', function (this: DescribeInstance) {
 });
 ```
 
-2. Run the tests
+3. Run the tests
 
 ```shell
 npm run dev

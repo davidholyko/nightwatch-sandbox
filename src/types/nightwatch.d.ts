@@ -39,5 +39,11 @@ declare module 'nightwatch' {
      * @param {Options} options
      */
     getByRole(role: 'heading', options: Options): Promise<NightwatchElement>;
+
+    /**
+     * Tabs once
+     *
+     */
+    tab(): Promise<void>;
   }
 }
