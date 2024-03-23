@@ -8,6 +8,7 @@
     "build": "tsc && cp src/module.json dist/package.json",
     "prestart": "npm run cleanup && npm run build",
     "start": "npx nightwatch dist/tests --config dist/nightwatch.conf.js",
+    "dev": "npm run prestart && npx nightwatch dist/tests --config dist/nightwatch.conf.js --tag dev",
     "poststart": "rm -f nightwatch.conf.cjs"
   },
   "type": "module",

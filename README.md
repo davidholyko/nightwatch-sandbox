@@ -20,6 +20,32 @@ npm i
 npm run start
 ```
 
+## Development
+
+To develop tests locally, follow these steps:
+
+1. Add the tag `dev` to a test you are working on
+
+```ts
+import 'nightwatch';
+import { DescribeInstance } from 'nightwatch';
+
+describe('Baseline Test', function (this: DescribeInstance) {
+  this.disabled = false;
+  this.tags = ['dev']; // tag here
+
+  it('Demo test ecosia.org', async function (browser) {
+    await browser.waitForElementVisible('body');
+  });
+});
+```
+
+2. Run the tests
+
+```shell
+npm run dev
+```
+
 ## Debugging
 
 ```

@@ -3,3 +3,4 @@ dist
 logs
 tests_output
 nightwatch.conf.cjs
+.vscode/settings.json
