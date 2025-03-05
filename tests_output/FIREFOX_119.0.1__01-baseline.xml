@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="1"
+            tests="1">
+
+  <testsuite name="01-baseline"
+    errors="1" failures="1" hostname="" id="" package="01-baseline" skipped="0"
+    tests="1" time="23.91" timestamp="">
+  
+    <testcase name="Demo test ecosia.org" classname="01-baseline" time="11.60" assertions="5">
+
+    
+
+    
+
+    
+
+      <failure message="Testing if element &lt;.layout__content&gt; contains text &#39;Nightwatch.js&#39; in 5000ms - expected &#34;contains text &#39;Nightwatch.js&#39;&#34; but got: &#34;error while locating the element&#34; (10441ms)">    at DescribeInstance.&lt;anonymous&gt; (/Users/davidko/Work/nightwatch-sandbox/dist/tests/01-baseline.js:15:24)</failure>
+
+    
+    <error message="Testing if element [33m&lt;.layout__content&gt;[39m contains text [33m&#39;Nightwatch.js&#39;[39m in 5000ms - expected [32m&#34;contains text &#39;Nightwatch.js&#39;&#34;[39m but got: [31m&#34;error while locating the element&#34;[39m [90m(10441ms)[39m" type="error"><![CDATA[
+    Error
+    at Proxy.&lt;anonymous&gt; (/Users/davidko/Work/nightwatch-sandbox/node_modules/nightwatch/dist/api/index.js:140:40)
+    at DescribeInstance.&lt;anonymous&gt; (/Users/davidko/Work/nightwatch-sandbox/dist/tests/01-baseline.js:15:24)
+    at Context.call (/Users/davidko/Work/nightwatch-sandbox/node_modules/nightwatch/dist/testsuite/context.js:413:39)
+    at TestCase.run (/Users/davidko/Work/nightwatch-sandbox/node_modules/nightwatch/dist/testsuite/testcase.js:50:39)
+    at Runnable.__runFn (/Users/davidko/Work/nightwatch-sandbox/node_modules/nightwatch/dist/testsuite/index.js:675:84)
+    at Runnable.run (/Users/davidko/Work/nightwatch-sandbox/node_modules/nightwatch/dist/testsuite/runnable.js:103:27)
+    at TestSuite.executeRunnable (/Users/davidko/Work/nightwatch-sandbox/node_modules/nightwatch/dist/testsuite/index.js:809:55)
+    at TestSuite.handleRunnable (/Users/davidko/Work/nightwatch-sandbox/node_modules/nightwatch/dist/testsuite/index.js:822:39)
+    at /Users/davidko/Work/nightwatch-sandbox/node_modules/nightwatch/dist/testsuite/index.js:675:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    ]]></error>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+       TimeoutError
+   An error occurred while running .getText() command on &lt;.layout__content&gt;: Tried to run command without establishing a connection
+    {&#34;error&#34;:{&#34;name&#34;:&#34;NoSuchSessionError&#34;,&#34;remoteStacktrace&#34;:&#34;&#34;},&#34;status&#34;:-1,&#34;value&#34;:null}
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>
