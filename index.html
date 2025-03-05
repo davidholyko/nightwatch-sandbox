@@ -25,4 +25,11 @@
   <button id="btn-3" class="btn" aria-label="Button 3">Button 3</button>
   <button id="btn-4" class="btn" aria-label="Button 4">Button 4</button>
 </body>
+<script>
+  document.querySelectorAll('.btn').forEach(element => {
+    element.addEventListener('click', function fn(event) {
+      event.target.style.backgroundColor = 'green'
+    })
+  })
+</script>
 </html>

@@ -19,6 +19,7 @@
     "nightwatch": "^3.3.0"
   },
   "devDependencies": {
+    "@testing-library/nightwatch": "^2.0.0",
     "@types/nightwatch": "^2.3.28"
   }
 }
